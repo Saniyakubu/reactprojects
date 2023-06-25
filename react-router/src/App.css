@@ -1,0 +1,35 @@
+.box {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-direction: column;
+  width: 600px;
+  margin: 5% auto;
+  color: black;
+}
+.list {
+  background-color: aliceblue;
+  width: 100%;
+  color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  color: #222;
+}
+.details {
+  width: 800px;
+  margin: 10% auto;
+  font-size: 1.5rem;
+}
+
+.detailslist {
+  margin-top: 20px;
+}
+.detailslist > p {
+  font-size: 1.4rem;
+  line-height: 2;
+}

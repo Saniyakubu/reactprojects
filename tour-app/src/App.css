@@ -1,0 +1,137 @@
+.box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+.card {
+  width: 430px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.infomation {
+  padding: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.header {
+  width: 100%;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 320px;
+  display: block;
+  object-fit: cover;
+}
+span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: tomato;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: whitesmoke;
+}
+.title {
+  text-align: center;
+  margin-top: 30px;
+}
+.title > .underline {
+  background-color: tomato;
+  width: 7rem;
+  height: 0.25rem;
+  width: 190px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.center {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 100px;
+  border: none;
+  padding: 10px;
+  background-color: tomato;
+  color: white;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.deletebtn {
+  width: 80%;
+  padding: 5px;
+  border: none;
+  background-color: tomato;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.deletebtn:hover {
+  background-color: whitesmoke;
+  color: #333;
+  border: 2px solid #333;
+  transition: all ease-in-out 0.1s;
+}
+.readmorebtn {
+  border: none;
+  color: tomato;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 5%;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid tomato;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: tomato transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
