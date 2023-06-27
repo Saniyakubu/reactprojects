@@ -22,6 +22,10 @@ export const PropProvider = ({ children }) => {
     }
   }
   async function newData() {
+    if (name === '' || age === '' || jobtitle === '' || country === '') {
+      alert('fill the inputs');
+      return;
+    }
     const id = Data[Data.length - 1].id ? Data[Data.length - 1].id + 1 : 1;
     const newObject = {
       id,
