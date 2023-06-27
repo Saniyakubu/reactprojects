@@ -1,13 +1,6 @@
 {
   "posts": [
     {
-      "id": 2,
-      "name": "Jane Smith",
-      "age": 28,
-      "jobtitle": "Marketing Manager",
-      "country": "Canada"
-    },
-    {
       "id": 3,
       "name": "David Lee",
       "age": 42,
@@ -78,13 +71,6 @@
       "country": "Spain"
     },
     {
-      "id": 13,
-      "name": "Hiroshi Tanaka",
-      "age": 36,
-      "jobtitle": "IT Consultant",
-      "country": "Japan"
-    },
-    {
       "id": 14,
       "name": "Isabella Rossi",
       "age": 30,
@@ -92,39 +78,11 @@
       "country": "Italy"
     },
     {
-      "id": 15,
-      "name": "Ahmed Hassan",
-      "age": 34,
-      "jobtitle": "Project Coordinator",
-      "country": "Egypt"
-    },
-    {
       "id": 16,
       "name": "Chen Li",
       "age": 26,
       "jobtitle": "Business Analyst",
       "country": "China"
-    },
-    {
-      "id": 17,
-      "name": "Maria Silva",
-      "age": 43,
-      "jobtitle": "Human Resources Manager",
-      "country": "Brazil"
-    },
-    {
-      "id": 18,
-      "name": "Muhammad Khan",
-      "age": 38,
-      "jobtitle": "Sales Manager",
-      "country": "Pakistan"
-    },
-    {
-      "id": 19,
-      "name": "Olivia Johnson",
-      "age": 31,
-      "jobtitle": "UX/UI Designer",
-      "country": "United States"
     }
   ]
 }

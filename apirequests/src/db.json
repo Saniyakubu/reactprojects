@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "age": 30,
+    "role": "CEO"
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "age": 25,
+    "role": "CTO"
+  },
+  {
+    "id": 3,
+    "name": "Mary Smith",
+    "age": 20,
+    "role": "Software Engineer"
+  },
+  {
+    "id": 4,
+    "name": "John Smith",
+    "age": 35,
+    "role": "Product Manager"
+  },
+  {
+    "id": 5,
+    "name": "Jane Johnson",
+    "age": 28,
+    "role": "Marketing Manager"
+  },
+  {
+    "id": 6,
+    "name": "Mary Jones",
+    "age": 22,
+    "role": "Sales Representative"
+  },
+  {
+    "id": 7,
+    "name": "John Brown",
+    "age": 32,
+    "role": "Accountant"
+  },
+  {
+    "id": 8,
+    "name": "Jane Green",
+    "age": 27,
+    "role": "HR Manager"
+  },
+  {
+    "id": 9,
+    "name": "Mary Williams",
+    "age": 24,
+    "role": "Administrative Assistant"
+  },
+  {
+    "id": 10,
+    "name": "John Walker",
+    "age": 37,
+    "role": "IT Support Technician"
+  },
+  {
+    "id": 11,
+    "name": "Jane White",
+    "age": 30,
+    "role": "Customer Service Representative"
+  },
+  {
+    "id": 12,
+    "name": "Mary Black",
+    "age": 25,
+    "role": "Web Developer"
+  }
+]
