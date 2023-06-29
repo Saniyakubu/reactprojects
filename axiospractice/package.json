@@ -1,5 +1,5 @@
 {
-  "name": "apirequests",
+  "name": "axiospractice",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +8,10 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 5000" 
+    "server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
