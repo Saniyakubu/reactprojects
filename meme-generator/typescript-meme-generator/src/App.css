@@ -1,0 +1,94 @@
+.navbar {
+  background: linear-gradient(#672280 100%, #a626d3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem;
+  color: whitesmoke;
+}
+
+.btn {
+  background: linear-gradient(#672280 100%, #a626d3 100%);
+  color: whitesmoke;
+  padding: 1rem;
+  width: 35rem;
+  border: none;
+}
+
+.navbar--icon-div {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+p {
+  font-size: 1.5rem;
+}
+.logo {
+  width: 3.2rem;
+}
+
+.main {
+  background-color: whitesmoke;
+}
+input {
+  margin-right: 5px;
+  padding: 0.9rem;
+  width: 35rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  gap: 2rem;
+}
+
+.memeimg {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.memediv {
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: #ebe5e5;
+  font-size: 1.7rem;
+}
+
+.toptext {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*   text-shadow: 3px 3px 2px rgba(0, 0, 0, 1); */
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 1);
+  width: 16ch;
+}
+.buttomtext {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* text-shadow: 3px 3px 2px rgba(0, 0, 0, 1); */
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 1);
+  width: 16ch;
+}
+
+.imagtextdiv {
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 600px) {
+  .main {
+    background-color: transparent;
+  }
+  .imagtextdiv {
+    width: 30%;
+    margin: 0 auto;
+    position: relative;
+  }
+}
