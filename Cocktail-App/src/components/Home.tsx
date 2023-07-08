@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Drinks from './Drinks';
+import Search from './Search';
 
 type HomeProps = {
   idDrink: string;
@@ -35,10 +36,14 @@ function Home() {
   }, []);
 
   return (
-    <div className="container mx-auto flex-col p-7 md:flex-row flex flex-wrap gap-2 justify-between align-middle mt-16">
-      {cocktails.map((items) => {
-        return <Drinks key={items.idDrink} {...items} />;
-      })}
+    <div>
+      <Search />
+      <br />
+      <div className="container mx-auto flex-col p-7 md:flex-row flex flex-wrap gap-2 justify-between align-middle mt-16">
+        {cocktails.map((items) => {
+          return <Drinks key={items.idDrink} {...items} />;
+        })}
+      </div>
     </div>
   );
 }

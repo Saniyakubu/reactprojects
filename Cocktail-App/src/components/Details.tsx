@@ -1,6 +1,7 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 type DetailsProps = {
@@ -16,7 +17,9 @@ type DetailsProps = {
   strIngredient5: string;
   strInstructions: string;
 };
+
 function Details() {
+  const navigate = useNavigate();
   const [singleItem, setSingleItem] = useState<DetailsProps[]>([]);
   console.log(singleItem);
   const { id } = useParams();
@@ -33,6 +36,10 @@ function Details() {
     } catch (error) {}
   }
 
+  function backHome() {
+    navigate('/');
+  }
+
   useEffect(() => {
     fetchSingleItem();
   }, []);
@@ -42,6 +49,7 @@ function Details() {
         return (
           <div className="flex gap-8 align-middle justify-center w-2/3 mx-auto">
             <img className=" w-1/2" src={item.strDrinkThumb} alt="" />
+
             <div className="flex flex-col gap-8 justify-center">
               <h1>
                 <span className=" bg-blue-500  p-2 mx-2">Name: </span>
@@ -77,6 +85,11 @@ function Details() {
           </div>
         );
       })}
+      <div className=" text-center mt-7">
+        <Button variant="outlined" onClick={backHome}>
+          Back Home
+        </Button>
+      </div>
     </div>
   );
 }

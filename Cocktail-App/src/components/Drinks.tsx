@@ -7,19 +7,11 @@ type HomeProps = {
   strDrink: string;
   strGlass: string;
   strDrinkThumb: string;
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
 
 function Drinks(props: HomeProps): JSX.Element {
   const navigate = useNavigate();
-  const {
-    strDrinkThumb,
-    strDrink,
-    strGlass,
-    strAlcoholic,
-    idDrink,
-    setSearch,
-  } = props;
+  const { strDrinkThumb, strDrink, strGlass, strAlcoholic, idDrink } = props;
   console.log(props);
 
   function openDetail(id: string) {
@@ -27,7 +19,7 @@ function Drinks(props: HomeProps): JSX.Element {
   }
 
   return (
-    <div className="md:w-72 bg-slate-200 text-black w-full  border border-yellow-50">
+    <div className="md:w-80 bg-slate-200 text-black w-full  border border-yellow-50">
       <img className="w-full block" src={strDrinkThumb} alt="" />
       <div className=" p-3 space-y-2">
         <h1 className="font-bold text-2xl ">{strDrink}</h1>
