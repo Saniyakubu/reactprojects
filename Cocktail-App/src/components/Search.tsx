@@ -31,6 +31,7 @@ function Search({ setSearch, search }: searchProp) {
           size="medium"
           value={search}
           onChange={update}
+          className=" w-fit"
         />
       </Box>
     </form>

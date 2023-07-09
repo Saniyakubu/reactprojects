@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Drinks from './Drinks';
 import Search from './Search';
-
+import { AxiosError } from 'axios';
 import Skeleton from '@mui/material/Skeleton';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 type HomeProps = {
   idDrink: string;
@@ -17,6 +19,9 @@ function Home() {
   const [cocktails, setCocktails] = useState<HomeProps[]>([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState<boolean>(false);
+  const [errMsg, setErrMsg] = useState<string>('');
+  console.log(errMsg);
   async function fetchData() {
     try {
       setLoading(true);
@@ -31,13 +36,31 @@ function Home() {
         }
       }
     } catch (error) {
-      setLoading(false);
+      const e = error as AxiosError;
+      const { message } = e;
+
+      if (e) {
+        setLoading(false);
+        setErr(true);
+        setErrMsg(message);
+      }
     }
   }
 
   useEffect(() => {
     fetchData();
   }, [search]);
+
+  if (err) {
+    return (
+      <div className="mt-24  w-1/2 mx-auto">
+        <Alert className="" severity="error">
+          <AlertTitle>Error</AlertTitle>
+          <strong>{errMsg}</strong>
+        </Alert>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -68,8 +91,11 @@ function Home() {
             return <Drinks key={items.idDrink} {...items} />;
           })
         ) : (
-          <div className="text-center">
-            <h1 className=" text-2xl font-bold">No Match Item</h1>
+          <div className="w-1/2 mx-auto">
+            <Alert severity="info">
+              <AlertTitle>Info</AlertTitle>
+              <strong>item not found.</strong>
+            </Alert>
           </div>
         )}
       </div>
