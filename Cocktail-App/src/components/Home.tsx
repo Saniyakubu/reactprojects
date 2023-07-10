@@ -7,22 +7,21 @@ import Skeleton from '@mui/material/Skeleton';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
-type HomeProps = {
+interface HomeProps {
   idDrink: string;
   strAlcoholic: string;
   strDrink: string;
   strGlass: string;
   strDrinkThumb: string;
-};
+}
 
-function Home() {
+function Home(): JSX.Element {
   const [cocktails, setCocktails] = useState<HomeProps[]>([]);
-  const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
   const [err, setErr] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>('');
-  console.log(errMsg);
-  async function fetchData() {
+  async function fetchData(): Promise<void> {
     try {
       setLoading(true);
       const res = await axios(
@@ -47,7 +46,7 @@ function Home() {
     }
   }
 
-  useEffect(() => {
+  useEffect((): void => {
     fetchData();
   }, [search]);
 
@@ -94,7 +93,7 @@ function Home() {
           <div className="w-1/2 mx-auto">
             <Alert severity="info">
               <AlertTitle>Info</AlertTitle>
-              <strong>item not found.</strong>
+              <strong>No Matching Cocktails Found...</strong>
             </Alert>
           </div>
         )}

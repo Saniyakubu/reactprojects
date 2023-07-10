@@ -3,7 +3,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Details from './components/Details';
 import Header from './components/Header';
-function App() {
+function App(): JSX.Element {
   return (
     <>
       <Header />

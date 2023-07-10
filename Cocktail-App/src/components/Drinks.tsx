@@ -2,13 +2,13 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import noimage from '../assets/noimage.jpg';
 
-type HomeProps = {
+interface HomeProps {
   idDrink: string;
   strAlcoholic: string;
   strDrink: string;
   strGlass: string;
   strDrinkThumb: string;
-};
+}
 
 function Drinks(props: HomeProps): JSX.Element {
   const navigate = useNavigate();

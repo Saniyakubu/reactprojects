@@ -7,7 +7,8 @@ import Skeleton from '@mui/material/Skeleton';
 
 import axios from 'axios';
 
-type DetailsProps = {
+interface DetailsProps {
+  idDrink: string;
   strDrinkThumb: string;
   strAlcoholic: string;
   strCategory: string;
@@ -18,15 +19,25 @@ type DetailsProps = {
   strIngredient3: string;
   strIngredient4: string;
   strIngredient5: string;
+  strIngredient6: string;
+  strIngredient7: string;
+  strIngredient8: string;
+  strIngredient9: string;
+  strIngredient10: string;
+  strIngredient11: string;
+  strIngredient12: string;
+  strIngredient13: string;
+  strIngredient14: string;
+  strIngredient15: string;
   strInstructions: string;
-};
+}
 
-function Details() {
+function Details(): JSX.Element {
   const navigate = useNavigate();
   const [singleItem, setSingleItem] = useState<DetailsProps[]>([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  async function fetchSingleItem() {
+  async function fetchSingleItem(): Promise<void> {
     try {
       setLoading(true);
       const res = await axios(
@@ -47,7 +58,7 @@ function Details() {
     navigate('/');
   }
 
-  useEffect(() => {
+  useEffect((): void => {
     fetchSingleItem();
   }, []);
 
@@ -71,7 +82,10 @@ function Details() {
     <div className=" mt-14">
       {singleItem.map((item) => {
         return (
-          <div className="flex flex-col md:flex-row gap-8 justify-center p-8 md:p-0 container mx-auto">
+          <div
+            key={item.idDrink}
+            className="flex flex-col md:flex-row gap-8 justify-center p-8 md:p-0 container mx-auto"
+          >
             <div className="md:w-1/3">
               <img className="w-full" src={item.strDrinkThumb} alt="drinks" />
             </div>
@@ -107,13 +121,33 @@ function Details() {
                 <span className=" p-1 bg-blue-500 font-bold text-lg mr-4">
                   Ingredient:
                 </span>
-                {item.strIngredient2}
+                {item.strIngredient2 ? item.strIngredient2 : null}
 
-                {item.strIngredient3}
+                {item.strIngredient3 ? item.strIngredient3 : null}
 
-                {item.strIngredient4}
+                {item.strIngredient4 ? item.strIngredient4 : null}
 
-                {item.strIngredient5}
+                {item.strIngredient5 ? item.strIngredient5 : null}
+
+                {item.strIngredient6 ? item.strIngredient6 : null}
+
+                {item.strIngredient7 ? item.strIngredient7 : null}
+
+                {item.strIngredient8 ? item.strIngredient8 : null}
+
+                {item.strIngredient9 ? item.strIngredient9 : null}
+
+                {item.strIngredient10 ? item.strIngredient10 : null}
+
+                {item.strIngredient11 ? item.strIngredient11 : null}
+
+                {item.strIngredient12 ? item.strIngredient12 : null}
+
+                {item.strIngredient13 ? item.strIngredient13 : null}
+
+                {item.strIngredient14 ? item.strIngredient14 : null}
+
+                {item.strIngredient15 ? item.strIngredient15 : null}
               </p>
               <p className="mb-5 text-black">
                 <span className=" p-1 bg-blue-500 font-bold text-lg mr-4">
