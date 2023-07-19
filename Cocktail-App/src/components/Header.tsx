@@ -4,7 +4,7 @@ function Header() {
     <nav className=" bg-blue-500 p-12">
       <div className="container flex justify-between items-center">
         <Link to="/" className="text-white text-3xl font-bold">
-          Cocktails
+          Mixology
         </Link>
 
         <ul className="flex justify-between items-center gap-7 text-black">
