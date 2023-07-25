@@ -3,16 +3,17 @@ import { ChangeEvent } from 'react';
 import { auth, db } from '../config/firebase';
 import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-interface userV {
-  isAuth: boolean;
-}
+
 import toast, { Toaster } from 'react-hot-toast';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-const CreatePost = ({ isAuth }: userV) => {
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
+const CreatePost = () => {
   const navigate = useNavigate();
   const [inputsValues, setInputsValues] = useState({
     title: '',
@@ -29,12 +30,13 @@ const CreatePost = ({ isAuth }: userV) => {
     console.log(value, name);
     setInputsValues({ ...inputsValues, [name]: value });
   }
-
+  const [open, setOpen] = useState(false);
   async function newPost() {
     if (inputsValues.texts === '' || inputsValues.title === '') {
       toast.error('inputs are empty');
       return;
     } else {
+      setOpen(true);
       await addDoc(postCollectionRef, {
         title: inputsValues.title,
         post: inputsValues.texts,
@@ -45,6 +47,7 @@ const CreatePost = ({ isAuth }: userV) => {
         },
       })
         .then(() => {
+          setOpen(false);
           toast('your post has been published', {
             icon: '😀',
             style: {
@@ -56,6 +59,7 @@ const CreatePost = ({ isAuth }: userV) => {
         })
         .catch((error) => {
           toast.error(error.message);
+          setOpen(false);
         });
       setInputsValues({
         title: '',
@@ -73,6 +77,15 @@ const CreatePost = ({ isAuth }: userV) => {
 
   return (
     <div className="container mx-auto flex justify-center items-center h-screen">
+      <Backdrop
+        sx={{
+          color: '#fff',
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Toaster position="top-center" reverseOrder={false} />
       <div className="border">
         <Box

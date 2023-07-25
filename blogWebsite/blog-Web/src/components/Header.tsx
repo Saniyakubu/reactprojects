@@ -17,7 +17,7 @@ const Header = (): JSX.Element => {
   return (
     <header className=" bg-accent p-4">
       <nav className="container mx-auto">
-        <ul className="flex gap-9 justify-center items-center text-gray-950">
+        <ul className="flex gap-9 justify-center items-center  text-xl text-white">
           <Link to={'/'}>Home</Link>
 
           <Link to={'/about'}>About</Link>

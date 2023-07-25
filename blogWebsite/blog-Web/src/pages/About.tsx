@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div>
-      <h1>abaout</h1>
+    <div className="container mx-auto flex justify-center items-center">
+      <h1 className="text-3xl font-bold mt-12">About Page</h1>
     </div>
   );
 };

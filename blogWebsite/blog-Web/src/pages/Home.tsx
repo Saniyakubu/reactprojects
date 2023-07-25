@@ -17,6 +17,9 @@ interface PostRes {
 import { MdDelete } from 'react-icons/md';
 import { FaEdit } from 'react-icons/fa';
 
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
 const Home: React.FC = () => {
   const [post, setPost] = useState<PostRes[] | null>(null);
   const [isClicked, setIsClicked] = useState(false);
@@ -26,6 +29,7 @@ const Home: React.FC = () => {
   const postCollectionRef = collection(db, 'posts');
 
   async function getPosts() {
+    setOpen(true);
     try {
       const res: QuerySnapshot = await getDocs(postCollectionRef);
       const resData: PostRes[] = res.docs.map((postData) => ({
@@ -33,9 +37,10 @@ const Home: React.FC = () => {
         id: postData.id,
       }));
       setPost(resData);
-      console.log(resData);
+      setOpen(false);
     } catch (error) {
       console.error('Error getting posts:', error);
+      setOpen(false);
     }
   }
 
@@ -69,8 +74,19 @@ const Home: React.FC = () => {
     getPosts();
   }, []);
 
+  const [open, setOpen] = useState(false);
+
   return (
     <main className="container mx-auto p-5 my-8 items-center flex flex-col gap-8">
+      <Backdrop
+        sx={{
+          color: '#fff',
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       {post &&
         post.map((item) => (
           <div
@@ -133,6 +149,7 @@ const Home: React.FC = () => {
                 )}
               </div>
             </div>
+            <div></div>
           </div>
         ))}
     </main>

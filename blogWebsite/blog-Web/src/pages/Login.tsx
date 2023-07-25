@@ -29,12 +29,19 @@ function Login({ setIsAuth }: userV): JSX.Element {
   return (
     <div>
       <Toaster position="top-center" reverseOrder={false} />
-      <h1>Sign In with google to continue</h1>
+      <div className="flex justify-center items-center container mx-auto flex-col gap-4 my-8">
+        <h1 className=" text-2xl">Sign In with google to continue</h1>
 
-      <button onClick={sinIn}>
-        Sign In with google
-        <FcGoogle />
-      </button>
+        <button
+          onClick={sinIn}
+          className=" cursor-pointer bg-accent p-4 rounded-xl font-bold hover:bg-transparent transition-all duration-200"
+        >
+          <span className="flex items-center gap-3">
+            Sign In with google
+            <FcGoogle />
+          </span>
+        </button>
+      </div>
     </div>
   );
 }
