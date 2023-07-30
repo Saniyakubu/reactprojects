@@ -19,9 +19,10 @@ import { FaEdit } from 'react-icons/fa';
 
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import { Button } from '@mui/material';
 
 const Home: React.FC = () => {
-  const [post, setPost] = useState<PostRes[] | null>(null);
+  const [post, setPost] = useState<PostRes[]>([]);
   const [isClicked, setIsClicked] = useState(false);
   const [NewValue, setNewValue] = useState('');
   const [itemId, setItemId] = useState('');
@@ -32,10 +33,11 @@ const Home: React.FC = () => {
     setOpen(true);
     try {
       const res: QuerySnapshot = await getDocs(postCollectionRef);
-      const resData: PostRes[] = res.docs.map((postData) => ({
+      const resData: any = res.docs.map((postData) => ({
         ...postData.data(),
         id: postData.id,
       }));
+      console.log(resData);
       setPost(resData);
       setOpen(false);
     } catch (error) {
@@ -75,7 +77,16 @@ const Home: React.FC = () => {
   }, []);
 
   const [open, setOpen] = useState(false);
-
+  console.log(post);
+  if (post?.length === 0) {
+    return (
+      <div className="container mx-auto mt-20 text-center">
+        <Button className="" href="/newpost">
+          Add NEW post
+        </Button>
+      </div>
+    );
+  }
   return (
     <main className="container mx-auto p-5 my-8 items-center flex flex-col gap-8">
       <Backdrop

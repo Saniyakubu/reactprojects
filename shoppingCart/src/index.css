@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  gap: 10px;
+  padding: 10px;
+  place-items: center;
+  place-content: space-between;
+}
+
+.items {
+  background-color: aqua;
+}
+.imgDiv {
+  border: 2px solid black;
+  width: 100%;
+}
+.imgDiv > img {
+  width: 100%;
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+.cartItems {
+  width: 200px;
+}
+
+.img > img {
+  width: 100px;
+}

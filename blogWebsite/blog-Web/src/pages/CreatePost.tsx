@@ -61,6 +61,7 @@ const CreatePost = () => {
           toast.error(error.message);
           setOpen(false);
         });
+
       setInputsValues({
         title: '',
         texts: '',
@@ -86,6 +87,7 @@ const CreatePost = () => {
       >
         <CircularProgress color="inherit" />
       </Backdrop>
+
       <Toaster position="top-center" reverseOrder={false} />
       <div className="border">
         <Box
