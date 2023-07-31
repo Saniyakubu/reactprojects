@@ -1,43 +1,41 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { StoreContext } from '../context/contextStore';
+
 const Cart = () => {
   const {
-    storeItems,
-    cartItems,
+    storeProducts,
+    cartProducts,
     addToCart,
     removeFromCart,
-    updateCart,
-    getTotalCartAmount,
+    updateAmount,
+    getTotalAmount,
   } = useContext(StoreContext);
-  console.log(cartItems);
-  const totalAmount = getTotalCartAmount();
+
+  const totalPrice = getTotalAmount();
+
   return (
     <div className="box">
-      {storeItems.map((items) => {
-        const { id, title, price, image } = items;
-        if (cartItems[id] > 0) {
+      {storeProducts.map((items) => {
+        const { id, title, image, price } = items;
+        if (cartProducts[id] > 0) {
           return (
-            <div className="cartItems">
-              <div className="img">
-                <img src={image} />
-              </div>
+            <div key={id}>
               <div>
-                <h1>{title}</h1>
-                <p>{price}</p>
+                <img style={{ width: '100px' }} src={image} />
               </div>
-              <div>
-                <button onClick={() => removeFromCart(id)}>-</button>
-                <input
-                  value={cartItems[id]}
-                  onChange={(e) => updateCart(Number(e.target.value), id)}
-                />
-                <button onClick={() => addToCart(id)}>+</button>
-              </div>
+              <h1>{title}</h1>
+              <p>{price}</p>
+              <button onClick={() => removeFromCart(id)}>-</button>
+              <input
+                value={cartProducts[id]}
+                onChange={(e) => updateAmount(Number(e.target.value), id)}
+              />
+              <button onClick={() => addToCart(id)}>+</button>
             </div>
           );
         }
       })}
-      <h1>total amount {totalAmount}</h1>
+      <h1>price: {totalPrice}</h1>
     </div>
   );
 };

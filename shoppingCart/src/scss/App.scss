@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto:wght@400;500;900&display=swap');
+body {
+  font-family: 'Open Sans';
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 90%;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  .box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    border-radius: 10px;
+
+    .prodImgBox {
+      min-width: 100%;
+      margin: 0 auto;
+      background-color: #e6e4e4;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      justify-content: center;
+      img {
+        min-width: 100%;
+        display: block;
+        mix-blend-mode: multiply;
+        object-fit: contain;
+      }
+    }
+    h1 {
+      font-size: 1rem;
+      font-family: 'Open Sans';
+      font-weight: 650;
+    }
+    P {
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+    .btnBox {
+      text-align: end;
+      text-align: center;
+      width: 100%;
+      margin-top: 15px;
+
+      button:hover::before {
+        background-color: lightgreen;
+        width: 100%;
+      }
+    }
+  }
+  .iconbox {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .icon {
+    color: green;
+  }
+}
+nav {
+  background-color: #1565c0;
+  padding: 10px;
+  .header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      li {
+        font-size: 1.5rem;
+        color: white;
+      }
+      .link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+  .cart {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.title {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e6e4e4;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border-radius: 0 0 10px 10px;
+}
+
+.btnGroup {
+  width: 70%;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 20px auto;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (max-width: 1240px) {
+  body {
+    background-color: #1565c0;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .btnGroup {
+    width: 80%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 1140px) {
+  body {
+    background-color: #1565c0;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    gap: 20px;
+    place-content: center;
+    place-items: center;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  .btnGroup {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    background-color: #1565c0;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    gap: 20px;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+    color: white;
+    .box {
+      width: 90%;
+    }
+    .title {
+      padding: 2px;
+      h1 {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      .iconbox {
+        justify-content: center;
+        width: 100%;
+        font-size: 1.2rem;
+        margin-top: 5px;
+      }
+    }
+  }
+  .btnGroup {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 10px;
+    .btns {
+      flex-direction: column;
+      &:last-child {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .btnGroup {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    gap: 10px;
+    .btns {
+      flex-direction: column;
+      &:last-child {
+        grid-column: span 2;
+      }
+    }
+  }
+}
