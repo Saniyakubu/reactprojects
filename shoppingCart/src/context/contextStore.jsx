@@ -7,10 +7,12 @@ const ContextStore = ({ children }) => {
   const [storeProducts, setStoreProducts] = useState([]);
 
   const [btn, setBtn] = useState([]);
-  console.log(btn);
+
   const [cartProducts, setCartProducts] = useState([]);
-  console.log(cartProducts);
-  console.log(storeProducts);
+
+  const hasNumberBiggerThanZero = Object.values(cartProducts).some(
+    (value) => value > 0
+  );
 
   async function getItems() {
     try {
@@ -33,6 +35,8 @@ const ContextStore = ({ children }) => {
         let cart = {};
         for (let i = 1; i < data.length + 1; i++) {
           cart[i] = 0;
+          /* const local = localStorage.setItem('cartItems', JSON.stringify(cart));
+          setCartProducts(local); */
           setCartProducts(cart);
         }
       }
@@ -74,6 +78,7 @@ const ContextStore = ({ children }) => {
     let totalAmount = 0;
     let formattedNumber;
     let local;
+    /*      const userJSON.parse(localStorage.getItem('cartItems')) || */
     for (const item in cartProducts) {
       if (cartProducts[item] > 0) {
         let itemInfo = storeProducts.find(
@@ -90,9 +95,16 @@ const ContextStore = ({ children }) => {
   useEffect(() => {
     getItems();
   }, []);
+  /* 
+  useEffect(() => {
+    const local = localStorage.setItem(
+      'cartItems',
+      JSON.stringify(cartProducts)
+    );
+    setCartProducts(local);
+  }, [cartProducts]); */
 
   const store = {
-    filteredItem,
     cartProducts,
     storeProducts,
     addToCart,
@@ -101,6 +113,7 @@ const ContextStore = ({ children }) => {
     getTotalAmount,
     filteredItem,
     btn,
+    hasNumberBiggerThanZero,
   };
 
   return (

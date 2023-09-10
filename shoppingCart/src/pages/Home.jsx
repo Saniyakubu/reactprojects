@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { StoreContext } from '../context/contextStore';
 import { AiFillStar } from 'react-icons/ai';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 const Home = () => {
   const {
@@ -33,7 +31,7 @@ const Home = () => {
       <section className="items">
         {storeProducts &&
           storeProducts.map((product) => {
-            const { id, title, price, description, image, rating } = product;
+            const { id, title, price, image, rating } = product;
             const prodAmount = cartProducts[id];
             return (
               <div key={id} className="box">
