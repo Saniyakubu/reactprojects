@@ -9,9 +9,7 @@ function Count() {
       <p>{count}</p>
       <div>
         <button onClick={() => dispatch(increment())}>+</button>
-        <button onClick={() => dispatch(decrement(console.log('object')))}>
-          -
-        </button>
+        <button onClick={() => dispatch(decrement())}>-</button>
       </div>
       <button onClick={() => dispatch(reset())}>reset</button>
     </div>
